@@ -52,19 +52,19 @@ class Lunchbot:
 
     def get_day(self, day):
         # Finding and setting the end of each day's meal list. Could probably be shorter.
-        if day == "M":
+        if day == "Mon":
             day = "Monday"
             end_day_pos = self.menu.index("Tuesday:")
-        elif day == "T":
+        elif day == "Tues":
             day = "Tuesday"
             end_day_pos = self.menu.index("Wednesday:")
-        elif day == "W":
+        elif day == "Wednes":
             day = "Wednesday"
             end_day_pos = self.menu.index("Thursday:")
-        elif day == "Th":
+        elif day == "Thurs":
             day = "Thursday"
             end_day_pos = self.menu.index("Friday:")
-        elif day == "F":
+        elif day == "Fri":
             day = "Friday"
             end_day_pos = len(self.menu)
 

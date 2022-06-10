@@ -42,6 +42,12 @@ class Lunchbot:
         # Finding and setting the location of each day's meal list beginning
         for day, spot in self.dict.items():
             self.dict[day] = self.menu.index(day)
+    def get_week(self):
+        #compiles all the days of the week into one message bc we aren't that rich here.
+        week_menu = ""
+        for day in self.days_of_the_week:
+            week_menu += self.get_day(day) + "\n\n"
+        return week_menu
 
 
     def get_day(self, day):

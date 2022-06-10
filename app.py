@@ -1,18 +1,21 @@
 from flask import Flask, request
 from twilio import twiml
 from twilio.twiml.messaging_response import Message, MessagingResponse
+from lunch_menu_parser import Lunchbot
 
 import requests
 
 app = Flask(__name__)
 
-remote_menu_url = "http://fwp-lunchbot.s3.us-east-2.amazonaws.com/menu.txt"
+##remote_menu_url = "http://fwp-lunchbot.s3.us-east-2.amazonaws.com/menu.txt" this never needed to exist
 
-def read_parsed_text_menu():
-    "Read contents of remote menu file."
-    remote_menu = requests.get(remote_menu_url)
-    remote_menu.encoding = remote_menu.apparent_encoding
-    return(remote_menu.text.strip())
+bot = Lunchbot("https://fwparker.myschoolapp.com/ftpimages/1048/download/download_6209679.pdf")
+
+##def read_parsed_text_menu():
+##    "Read contents of remote menu file."
+##    remote_menu = requests.get(remote_menu_url)
+##    remote_menu.encoding = remote_menu.apparent_encoding
+##    return(remote_menu.text.strip())
 
 @app.route('/sms', methods=['POST'])
 def sms():
@@ -21,7 +24,7 @@ def sms():
     # message_body = request.form['Body'].title().strip() # Who cares
     resp = MessagingResponse()
 
-    resp.message(read_parsed_text_menu())
+    resp.message(bot.get_week())
 
     return str(resp)
 

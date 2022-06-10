@@ -15,5 +15,5 @@ soupsieve==2.3
 twilio==7.3.0
 urllib3==1.26.7
 Werkzeug==2.0.2
-pdftotext=2.2.2
-six=1.16.0
+pdftotext==2.2.2
+six==1.16.0

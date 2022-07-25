@@ -23,8 +23,9 @@ def sms():
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
     resp = MessagingResponse()
+    response = bot.get_week()+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
 
-    resp.message(bot.get_week())
+    resp.message(response)
 
     return str(resp)
 

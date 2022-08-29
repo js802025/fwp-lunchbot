@@ -39,12 +39,12 @@ class Lunchbot:
         #         if day in item: self.menu[index] = day + "day:"
 
         self.menu = {}
-        text = self.pdf_content.split("3rd Grade Lunch Menu")[0].split("day:")
+        text = self.pdf_content.split("3rd Grade Lunch Menu")[0].split("day")
 
         for index, item in enumerate(text):
             dayLunch = item.split("\n")[1:-1]
             if not index == 0:
-                self.menu[dayName+ "day:"] = item
+                self.menu[dayName+ "day:"] = dayLunch
             dayName = item.split("\n")[-1]
         print(self.menu)
             
@@ -58,8 +58,8 @@ class Lunchbot:
     def get_week(self):
         #compiles all the days of the week into one message bc we aren't that rich here.
         week_menu = ""
-        for day in self.days_of_the_week:
-            week_menu += self.get_day(day) + "\n\n"
+        for day, lunch in self.menu:
+            week_menu += day+":\n"+lunch+"\n\n"
         return week_menu
 
 

@@ -27,15 +27,26 @@ class Lunchbot:
 
     def parse_pdf(self):
         # Turning the string into list (each word is its own element)
-        self.menu = self.pdf_content.split()
+        # self.menu = self.pdf_content.split()
         
-        # Removing weird unicode chars (bullet points)
-        for index, item in enumerate(self.menu):
-            if item == "\uf0b7": self.menu.remove(item)
-            if item == "•": self.menu[index] = "\n •"
-            # These two lines make sure that minor typos in the day make it thru
-            for day in self.days_of_the_week:
-                if day in item: self.menu[index] = day + "day:"
+        # # Removing weird unicode chars (bullet points)
+        # for index, item in enumerate(self.menu):
+        #     if item == "\uf0b7": self.menu.remove(item)
+        #     if item == "•": self.menu[index] = "\n •"
+        #     # These two lines make sure that minor typos in the day make it thru
+        #     for day in self.days_of_the_week:
+        #         if day in item: self.menu[index] = day + "day:"
+
+        self.menu = {}
+        text = self.pdf_content.split("3rd Grade Lunch Menu")[0].split("day:")
+
+        for index, item in enumerate(text):
+            dayLunch = item.split("\n")[1:-1]
+            if not index == 0:
+                self.menu[dayName+ "day:"] = item
+            dayName = item.split("\n")[-1]
+            
+        
 
         # self.menu[self.menu.index('Tuesday:3/1')] = "Tuesday:" # Stupid fix for a typo
 
@@ -52,23 +63,23 @@ class Lunchbot:
 
     def get_day(self, day):
         # Finding and setting the end of each day's meal list. Could probably be shorter.
-        if day == "Mon":
-            day = "Monday"
-            end_day_pos = self.menu.index("Tuesday:")
-        elif day == "Tues":
-            day = "Tuesday"
-            end_day_pos = self.menu.index("Wednesday:")
-        elif day == "Wednes":
-            day = "Wednesday"
-            end_day_pos = self.menu.index("Thursday:")
-        elif day == "Thurs":
-            day = "Thursday"
-            end_day_pos = self.menu.index("Friday:")
-        elif day == "Fri":
-            day = "Friday"
-            end_day_pos = len(self.menu)
+        # if day == "Mon":
+        #     day = "Monday"
+        #     end_day_pos = self.menu.index("Tuesday:")
+        # elif day == "Tues":
+        #     day = "Tuesday"
+        #     end_day_pos = self.menu.index("Wednesday:")
+        # elif day == "Wednes":
+        #     day = "Wednesday"
+        #     end_day_pos = self.menu.index("Thursday:")
+        # elif day == "Thurs":
+        #     day = "Thursday"
+        #     end_day_pos = self.menu.index("Friday:")
+        # elif day == "Fri":
+        #     day = "Friday"
+        #     end_day_pos = len(self.menu)
 
-        return ' '.join(self.menu[self.dict.get(day + ":"):end_day_pos])
+        return self.menu[day+"day"]
 
 
 if __name__ == '__main__':
@@ -80,6 +91,6 @@ if __name__ == '__main__':
 
     bot = Lunchbot(url)
 
-    todays_menu = bot.get_day(day_requested)
+    todays_menu = bot.get_week()
 
     print(todays_menu)

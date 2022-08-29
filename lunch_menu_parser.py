@@ -51,8 +51,8 @@ class Lunchbot:
         # self.menu[self.menu.index('Tuesday:3/1')] = "Tuesday:" # Stupid fix for a typo
 
         # Finding and setting the location of each day's meal list beginning
-        for day, spot in self.dict.items():
-            self.dict[day] = self.menu.index(day)
+        # for day, spot in self.dict.items():
+        #     self.dict[day] = self.menu.index(day)
     def get_week(self):
         #compiles all the days of the week into one message bc we aren't that rich here.
         week_menu = ""

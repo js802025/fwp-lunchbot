@@ -26,6 +26,7 @@ class Lunchbot:
 
 
     def parse_pdf(self):
+        print("hello")
         # Turning the string into list (each word is its own element)
         # self.menu = self.pdf_content.split()
         
@@ -45,6 +46,7 @@ class Lunchbot:
             if not index == 0:
                 self.menu[dayName+ "day:"] = item
             dayName = item.split("\n")[-1]
+        print(self.menu)
             
         
 

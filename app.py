@@ -29,7 +29,43 @@ Entrée: Thai Chicken Curry
 Vegetarian Entrée: Potato
 Samosas (contains gluten)
 Sides: Basmati Rice,
-Roasted Cauliflower """+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
+Roasted Cauliflower
+
+
+Tuesday:
+Entrée: Chicken Parmesan
+(non gluten available)
+Vegetarian: Eggplant
+Parmesan
+Sides: Green Beans, Penne
+with Marinara (non gluten
+pasta available)
+
+
+Thursday:
+Entrée: BBQ Pork Loin
+Vegetarian Entrée: Cheesy Polenta
+Sides: Mashed Potatoes, Broccoli with
+Parmesan
+(Today’s Meal is Non Gluten)
+
+
+Wednesday:
+Entrée: Beef and Broccoli
+(non gluten)
+Vegetarian Entrée: Sweet
+and Sour Tofu
+Side: Jasmine Rice, Spring
+Rolls
+
+
+Friday:
+Entrée: Beef and Cheese Lasagna (non gluten
+pasta available)
+Vegetarian Entrée: Spinach Pasta Bake
+Sides: Italian Vegetables, Garlic Bread
+
+"""+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
 
     resp.message(response)
 

@@ -30,7 +30,7 @@ class Lunchbot:
 
         self.menu = {}
 
-        text = self.pdf_content.split("2nd and 3rd Grade Lunch Menu (2nd Grade Tuesday ONLY)")[0].split("day:")
+        text = self.pdf_content.replace("• ", "").split("2nd and 3rd Grade Lunch Menu (2nd Grade Tuesday ONLY)")[0].split("day:")
 
         for index, item in enumerate(text):
             dayLunch = item.split("\n")[1:-1]

@@ -45,7 +45,7 @@ class Lunchbot:
         week_menu = ""
         for day, lunch in self.menu.items():
             week_menu += day+":\n"+lunch+"\n\n"
-        return week_menu.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
+        return week_menu#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
 
 
     def get_day(self, day):
@@ -64,5 +64,4 @@ if __name__ == '__main__':
     bot = Lunchbot(url)
 
     todays_menu = bot.get_week()
-
     print(todays_menu)

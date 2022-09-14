@@ -23,7 +23,7 @@ def sms():
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
     resp = MessagingResponse()
-    response = bot.get_week()+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
+    response = bot.get_week()#+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
 
     resp.message(response)
 
@@ -48,4 +48,3 @@ if __name__ == '__main__':
     # else:
     #     todays_menu = read_menu("M")
     # print(todays_menu + '\n \nSponsored by CTC/Student Government & FTC Robotics')
-    

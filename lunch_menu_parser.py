@@ -64,4 +64,4 @@ if __name__ == '__main__':
     bot = Lunchbot(url)
 
     todays_menu = bot.get_week()
-    print(todays_menu)
+    print(repr(todays_menu))

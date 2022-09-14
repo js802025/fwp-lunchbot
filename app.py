@@ -23,49 +23,7 @@ def sms():
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
     resp = MessagingResponse()
-    response = """Monday:
-Entrée: Thai Chicken Curry
-(non gluten meal)
-Vegetarian Entrée: Potato
-Samosas (contains gluten)
-Sides: Basmati Rice,
-Roasted Cauliflower
-
-
-Tuesday:
-Entrée: Chicken Parmesan
-(non gluten available)
-Vegetarian: Eggplant
-Parmesan
-Sides: Green Beans, Penne
-with Marinara (non gluten
-pasta available)
-
-
-Thursday:
-Entrée: BBQ Pork Loin
-Vegetarian Entrée: Cheesy Polenta
-Sides: Mashed Potatoes, Broccoli with
-Parmesan
-(Today’s Meal is Non Gluten)
-
-
-Wednesday:
-Entrée: Beef and Broccoli
-(non gluten)
-Vegetarian Entrée: Sweet
-and Sour Tofu
-Side: Jasmine Rice, Spring
-Rolls
-
-
-Friday:
-Entrée: Beef and Cheese Lasagna (non gluten
-pasta available)
-Vegetarian Entrée: Spinach Pasta Bake
-Sides: Italian Vegetables, Garlic Bread
-
-"""+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
+    response = """Monday:\nEntrée: Thai Chicken Curry\n(non gluten meal)\nVegetarian Entrée: Potato\nSamosas (contains gluten)\nSides: Basmati Rice,\nRoasted Cauliflower\n\n\nTuesday:\nEntrée: Chicken Parmesan\n(non gluten available)\nVegetarian: Eggplant\nParmesan\nSides: Green Beans, Penne\nwith Marinara (non gluten\npasta available)\n\n\nThursday:\nEntrée: BBQ Pork Loin\nVegetarian Entrée: Cheesy Polenta\nSides: Mashed Potatoes, Broccoli with\nParmesan\n(Today’s Meal is Non Gluten)\n\n\nWednesday:\nEntrée: Beef and Broccoli\n(non gluten)\nVegetarian Entrée: Sweet\nand Sour Tofu\nSide: Jasmine Rice, Spring\nRolls\n\n\nFriday:\nEntrée: Beef and Cheese Lasagna (non gluten\npasta available)\nVegetarian Entrée: Spinach Pasta Bake\nSides: Italian Vegetables, Garlic Bread\n\n\n"""+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
 
     resp.message(response)
 

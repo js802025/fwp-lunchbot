@@ -29,15 +29,16 @@ class Lunchbot:
         # This function parses the PDF and puts the menu into a dictionary of days of the week and their respective lunch menus.
 
         self.menu = {}
-        text = self.pdf_content.split("3rd Grade Lunch Menu")[0].split("day:")
+
+        text = self.pdf_content.split("2nd and 3rd Grade Lunch Menu (2nd Grade Tuesday ONLY)")[0].split("day:")
 
         for index, item in enumerate(text):
             dayLunch = item.split("\n")[1:-1]
             if not index == 0:
                 self.menu[dayName+ "day"] = "\n".join(dayLunch)
             dayName = item.split("\n")[-1]
-            
-        
+
+
 
     def get_week(self):
         #compiles all the days of the week into one message bc we aren't that rich here.

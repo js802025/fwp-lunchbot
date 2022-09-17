@@ -4,6 +4,7 @@
 ###  Original Sep 2019, improved Oct 2019, improved & class-ified Nov 2021
 ###
 
+import string
 import pdftotext
 from six.moves.urllib.request import urlopen
 import io
@@ -45,7 +46,9 @@ class Lunchbot:
         week_menu = ""
         for day, lunch in self.menu.items():
             week_menu += day+":\n"+lunch+"\n\n"
-        return week_menu#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
+        filtered_string = ''.join(s for s in week_menu if s in string.printable)
+
+        return filtered_string#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
 
 
     def get_day(self, day):

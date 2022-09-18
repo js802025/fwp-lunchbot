@@ -19,6 +19,7 @@ class Lunchbot:
         pdf = pdftotext.PDF(memory_file)
         self.pdf_content = pdf[0]
 
+
         # Creating dictionary to hold the location of each day's meal list in the list
         self.dict = {"Monday:": 0, "Tuesday:": 0, "Wednesday:": 0, "Thursday:": 0, "Friday:": 0}
         self.days_of_the_week = ["Mon", "Tues", "Wednes", "Thurs", "Fri"]
@@ -42,11 +43,12 @@ class Lunchbot:
 
 
     def get_week(self):
+        print(self.pdf_content)
         #compiles all the days of the week into one message bc we aren't that rich here.
         week_menu = ""
         for day, lunch in self.menu.items():
             week_menu += day+":\n"+lunch+"\n\n"
-        print(week_menu)
+        #print(week_menu)
 
         return week_menu#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
 

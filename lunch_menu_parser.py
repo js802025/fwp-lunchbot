@@ -44,11 +44,10 @@ class Lunchbot:
     def get_week(self):
         #compiles all the days of the week into one message bc we aren't that rich here.
         week_menu = ""
-        for day, lunch in self.menu.items():
-            week_menu += day+":\n"+lunch+"\n\n"
-        filtered_string = ''.join(s for s in week_menu if s in string.printable)
-
-        return filtered_string#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
+        for day in self.days_of_the_week:
+            week_menu += day+"day:\n"+self.menu[day+"day"]+"\n\n"
+        print(week_menu)
+        return week_menu#.replace("(", "").replace(")", "").replace("/", "").replace(":", "")
 
 
     def get_day(self, day):
@@ -67,4 +66,4 @@ if __name__ == '__main__':
     bot = Lunchbot(url)
 
     todays_menu = bot.get_week()
-    print(repr(todays_menu))
+    print(todays_menu)

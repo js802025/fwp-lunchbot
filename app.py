@@ -23,12 +23,12 @@ def sms():
 
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
-    print(request.form['From'])
+    print(from_numbers)
     if request.form['From'] in from_numbers.keys():
         from_numbers[request.form['From']] += 1
     else:
         from_numbers[request.form['From']] = 1
-    print(from_numbers)
+    #print(from_numbers)
     if from_numbers[request.form['From']] <= 3:
         resp = MessagingResponse()
         response = bot.get_week()+"\nSponsered by CTC & FTC Robotics"

@@ -16,18 +16,22 @@ bot = Lunchbot("https://fwparker.myschoolapp.com/ftpimages/1048/download/downloa
 ##    remote_menu = requests.get(remote_menu_url)
 ##    remote_menu.encoding = remote_menu.apparent_encoding
 ##    return(remote_menu.text.strip())
+from_numbers = {}
 
 @app.route('/sms', methods=['POST'])
 def sms():
 
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
-    resp = MessagingResponse()
-    response = bot.get_week()+"\nSigning in to the portal is not that easy, but Skilldule can help. On Skilldule you can access your schedule, homework, lunch, MXes and even group chats for your specific classes all in the same time it took to text this bot. Set up your Skilldule today at: https://skilldule.herokuapp.com"
-
-    resp.message(response)
-
-    return str(resp)
+    if request.form['From'] in from_numbers:
+        from_numbers[request.form['From']] += 1
+    else:
+        from_numbers[request.form['From']] = 1
+    if from_numbers[request.form['From']] <= 3:
+        resp = MessagingResponse()
+        response = bot.get_week()+"\n Sponsered by CTC & FTC Robotics"
+        resp.message(response)
+        return str(resp)
 
 if __name__ == '__main__':
     app.run()

@@ -34,6 +34,10 @@ def sms():
         response = bot.get_week()+"\nSponsered by CTC & FTC Robotics"
         resp.message(response)
         return str(resp)
+    else:
+        resp = MessagingResponse()
+        resp.message("")
+        return str(resp)
 
 if __name__ == '__main__':
     app.run()

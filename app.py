@@ -23,6 +23,7 @@ def sms():
 
     # number = request.form['From'] # variable not needed
     # message_body = request.form['Body'].title().strip() # Who cares
+    print(request.form['From'])
     if request.form['From'] in from_numbers.keys():
         from_numbers[request.form['From']] += 1
     else:

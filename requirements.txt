@@ -18,4 +18,3 @@ Werkzeug==2.0.2
 six==1.16.0
 camelot-py==0.10.1
 ghostscript==0.7
-opencv-python-headless==4.6.0.66

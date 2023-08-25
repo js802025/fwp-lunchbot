@@ -4,8 +4,6 @@
 ###  Original Sep 2019, improved Oct 2019, improved & class-ified Nov 2021
 ###
 
-import string
-import pdftotext
 from six.moves.urllib.request import urlopen
 import io
 import sys
